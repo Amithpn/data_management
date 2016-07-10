@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dman.materialmgmt.domain.ItemMaster;
 import com.dman.materialmgmt.domain.PurchaseOrderRequest;
 import com.dman.materialmgmt.domain.PurchaseOrderVO;
 import com.dman.materialmgmt.service.MaterialManagementService;
@@ -36,6 +37,16 @@ public class MaterialMgmtController {
 		String msg = poService.savePurchaseOrder(order);
 		
 		logger.debug(">>savePurchaseOrder PurchaseOrderRequest:"+ poRequest);
+		
+		return msg;
+	}
+	
+	@RequestMapping(value = "/mm/items", method = RequestMethod.POST, headers = "Accept=application/json")
+    public String saveItemMasterDeatils(@RequestBody ItemMaster itemMaster) {
+		
+		String msg = poService.saveItemMaster(itemMaster);
+		
+		logger.debug(">>savedItemMasterDeatils :"+ itemMaster);
 		
 		return msg;
 	}
