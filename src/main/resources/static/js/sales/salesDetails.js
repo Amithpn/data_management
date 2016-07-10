@@ -314,9 +314,23 @@ salesApp.controller(
 					
 					$scope.addNewVendorDetails = function() {
 						var newVendorObj = {
-							vendorId : $scope.newVendorDetails.vendorId,
-							vendorName : $scope.newVendorDetails.vendorName,
-							vendorAddress : $scope.newVendorDetails.vendorAddress
+							businessId : $scope.newVendorDetails.businessId,
+							name : $scope.newVendorDetails.name,
+							tinNo : $scope.newVendorDetails.tinNo,
+							statNo : $scope.newVendorDetails.statNo,
+							cstNo : $scope.newVendorDetails.cstNo,
+							panNo : $scope.newVendorDetails.panNo,
+							personName : $scope.newVendorDetails.personName,
+							mobileNo : $scope.newVendorDetails.mobileNo,
+							workNo : $scope.newVendorDetails.workNo,
+							homeNo : $scope.newVendorDetails.homeNo,
+							addressLine1 : $scope.newVendorDetails.addressLine1,
+							addressLine2 : $scope.newVendorDetails.addressLine2,
+							addressLine3 : $scope.newVendorDetails.addressLine3,
+							city : $scope.newVendorDetails.city,
+							state : $scope.newVendorDetails.state,
+							country : $scope.newVendorDetails.country,
+							pincode : $scope.newVendorDetails.pincode
 						}
 						var newVendorRes = $http.post('/vendor', newVendorObj);
 						newVendorRes
@@ -345,10 +359,11 @@ salesApp.controller(
 					
 					$scope.addNewItemMaster = function () {
 						var newItemMasObj = {
-								vendorId : $scope.newItemMasterDetails.vendorId,
-								vendorName : $scope.newItemMasterDetails.vendorName,
-								vendorAddress : $scope.newItemMasterDetails.vendorAddress,
-								itemList : $scope.quotationList
+								itemId : $scope.newItemMasterDetails.itemId,
+								itemName : $scope.newItemMasterDetails.itemName,
+								itemDescription : $scope.newItemMasterDetails.description,
+								itemSpecification : $scope.newItemMasterDetails.specification,
+								itemUom : $scope.newItemMasterDetails.uom
 							}
 							var newItemMasRes = $http.post('/itemmaster', newItemMasObj);
 						newItemMasRes
@@ -369,12 +384,18 @@ salesApp.controller(
 					}
 					function setNewItemMasObj(data) {
 						$scope.newItemMasterDetails = {};
-						$scope.newItemMasterDetails.vendorId = data.vendorId;
+						$scope.newItemMasterDetails.itemId = data.itemId;
+						$scope.newItemMasterDetails.itemName = data.itemName;
+						$scope.newItemMasterDetails.description = data.itemDescription;
+						$scope.newItemMasterDetails.specification = data.itemSpecification;
+						$scope.newItemMasterDetails.uom = data.itemUom;
+						
+						/*$scope.newItemMasterDetails.vendorId = data.vendorId;
 						$scope.newItemMasterDetails.vendorName = data.vendorName;
 						$scope.newItemMasterDetails.vendorAddress = data.vendorAddress;
-						var itemListData = data.itemList;
+						var itemListData = data.itemList;*/
 						
-						for(var i = 0 ;itemListData.length;i++ ) {
+						/*for(var i = 0 ;itemListData.length;i++ ) {
 								$scope.quotationList.push({
 								 	itemId : itemListData[i].itemId,
 								 	itemName : itemListData[i].itemName ,
@@ -384,7 +405,7 @@ salesApp.controller(
 									amount: itemListData[i].amount,
 									discount: itemListData[i].discount
 						  });
-						}
+						}*/
 					}
 					
 				}

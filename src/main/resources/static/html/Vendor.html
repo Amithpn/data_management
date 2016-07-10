@@ -1,21 +1,79 @@
-<div ng-show="isVendor" style="margin-left:70px !important;">
+<div ng-show="isVendor">
 <br>
 <h4>Add New Vendor</h4>
 <form method="post" name="vendorForm" class="form-inline" role="form" ng-submit="addNewVendorDetails()">
-<div class="col-sm-7">
-
+<div class="col-sm-6">
 
 <div class="x_title">Vendor Details:</div>
+<!-- <div class="x_title">Vendor Details:</div> -->
 <div class="form-group col-xs-6">
-<label>Vendor Id:</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newVendorDetails.vendorId" disabled="disabled"></div>
+<label>Business Id:</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newVendorDetails.businessId" disabled="disabled"></div>
 
 <div class="form-group col-xs-6">
-<label>Vendor Name: </label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.vendorName"></div>
+<label>Name: </label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.name"></div>
 
 <br><br>
 <div class="form-group col-xs-6">
-<label>Address: </label> &nbsp;&nbsp;&nbsp;<textarea rows="4" cols="25" class="form-control" name="address" ng-model="newVendorDetails.vendorAddress"></textarea>
+<label>TIN No.</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newVendorDetails.tinNo"></div>
+
+<div class="form-group col-xs-6">
+<label>Stat No. </label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.statNo"></div>
+
+<br><br>
+<div class="form-group col-xs-6">
+<label>CST No.</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newVendorDetails.cstNo"></div>
+
+<div class="form-group col-xs-6">
+<label>PAN No.</label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.panNo">
 </div>
+<br><br>
+<br><br>
+<div class="x_title">Contact Details:</div>
+
+<div class="form-group col-xs-6">
+<label>Person Name:</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newVendorDetails.personName"></div>
+
+<div class="form-group col-xs-6">
+<label>Mobile Number: </label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.mobileNumber"></div>
+
+<br><br>
+<div class="form-group col-xs-6">
+<label>Work No.</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newVendorDetails.workNo" ></div>
+
+<div class="form-group col-xs-6">
+<label>Home No. </label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.homeNo"></div>
+<br><br>
+<br><br>
+
+<div class="x_title">Address Details:</div>
+<div class="form-group col-xs-6">
+<label>Address Line 1:</label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.addressLine1"></div>
+
+<br><br>
+<br><br>
+<div class="form-group col-xs-6">
+<label>Address Line 2:</label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.addressLine2"></div>
+
+<br><br>
+<br><br>
+<div class="form-group col-xs-6">
+<label>Address Line 3:</label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.addressLine3"></div>
+
+<br><br>
+<br><br>
+<div class="form-group col-xs-6">
+<label>City:</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newVendorDetails.city" ></div>
+
+<div class="form-group col-xs-6">
+<label>State:</label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.state"></div>
+
+<br><br>
+<div class="form-group col-xs-6">
+<label>Country:</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newVendorDetails.country" ></div>
+
+<div class="form-group col-xs-6">
+<label>PIN code: </label><input type="text" class="form-control" name="vendorName" ng-model="newVendorDetails.pincode"></div>
+
 </div>
 <div class="col-sm-12">
 <!-- <tr>
@@ -66,6 +124,6 @@
 <div class="form-group"> 
     <button type="submit" class="btn btn-info">Submit</button>
 </div>
-</form>
 </div>
+</form>
 </div> 

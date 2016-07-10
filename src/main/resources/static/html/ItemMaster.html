@@ -2,34 +2,74 @@
 <br>
 <h4>Item Master</h4>
 
+<div class="col-sm-12">
 <div class="form-group">
 <label class="radio-inline"><input type="radio" id="search" ng-model="checked" value="search" ng-click="showSearch('search')">Search Item</label>
 <label class="radio-inline"><input type="radio" id="newItem" ng-model="checked" value="newItem"  ng-click="showNewItem('newItem')">Add New Item</label>
 </div>
+</div>
 
 <form method="post" name="quotationForm" ng-show="isAddNewItem" class="form-inline" ng-submit="addNewItemMaster()">
-<div class="col-sm-7">
+<div class="col-sm-6">
 
-<div class="x_title">Vendor Details:</div>
+
+<div class="x_title">Item Details:</div>
 
 <div class="form-group col-xs-6">
-<label>Vendor Id:</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newItemMasterDetails.vendorId" disabled="disabled">
+<label>Item Id:</label> <input type="text" class="form-control" name="vendor" ng-model="newItemMasterDetails.itemId" disabled="disabled"></div>
+
+<div class="form-group col-xs-6">
+<label>Item Name: </label><input type="text" class="form-control" name="vendorName" ng-model="newItemMasterDetails.itemName"></div>
+
+<br><br>
+<div class="form-group col-xs-6">
+<label>Description:</label> <input type="text" class="form-control" name="vendor" ng-model="newItemMasterDetails.description"></div>
+
+<div class="form-group col-xs-6">
+<label>Specification:  </label><input type="text" class="form-control" name="vendorName" ng-model="newItemMasterDetails.specification"></div>
+
+<br><br>
+<div class="form-group col-xs-6">
+<label>UOM:</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newItemMasterDetails.uom" ></div>
+
+</div>
+
+
+
+
+
+
+<!-- <div class="col-sm-9">
+
+<div class="x_title">Item Details:</div>
+
+<div class="form-group col-xs-6">
+<label>Item Id:</label> &nbsp;&nbsp;<input type="text" class="form-control" name="vendor" value="" ng-model="newItemMasterDetails.itemId" disabled="disabled">
 </div>
 
 <div class="form-group col-xs-6">
-<label>Vendor Name: </label><input type="text" class="form-control" name="vendorName" ng-model="newItemMasterDetails.vendorName">
+<label>Item Name: </label>&nbsp;<input type="text" class="form-control" name="vendorName" ng-model="newItemMasterDetails.itemName">
 </div>
 
+<div class="form-group col-xs-6">
 <br>
-<br>
-<div class="form-group col-xs-6">
-<label>Address: </label> &nbsp;&nbsp;&nbsp;<textarea rows="4" class="form-control" cols="25" name="address" ng-model="newItemMasterDetails.vendorAddress">
-</textarea>
-</div>
+<label>Description:</label> <input type="text" class="form-control" name="vendor" value="" ng-model="newItemMasterDetails.description">
 </div>
 
-<div class="col-sm-12">
-<div class="form-group">
+<div class="form-group col-xs-6">
+<br>
+<label>Specification: </label><input type="text" class="form-control" name="vendorName" ng-model="newItemMasterDetails.specification">
+</div>
+
+<div class="form-group col-xs-6">
+<br>
+<label>UOM:</label>&nbsp;&nbsp; <input type="text" class="form-control" name="vendor" value="" ng-model="newItemMasterDetails.uom">
+</div>
+
+</div> -->
+
+ <div class="col-sm-12">
+<!--<div class="form-group">
 <br/>
 <br/>
 <button type="button" class="btn btn-info" ng-click="addQuotation()">
@@ -73,7 +113,7 @@
 				<br>
 				<br>				
 
-</div>
+</div> -->
 
 <br>
 <br>
