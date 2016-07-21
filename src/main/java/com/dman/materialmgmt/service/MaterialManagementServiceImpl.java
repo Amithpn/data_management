@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.dman.materialmgmt.dao.ItemMasterDaoImpl;
 import com.dman.materialmgmt.dao.MaterialManagementDaoImpl;
+import com.dman.materialmgmt.dao.VendorDaoImpl;
+import com.dman.materialmgmt.domain.BusinessContact;
 import com.dman.materialmgmt.domain.ItemMaster;
 import com.dman.materialmgmt.domain.PurchaseOrderVO;
 
@@ -16,6 +18,9 @@ public class MaterialManagementServiceImpl implements MaterialManagementService 
 	
 	@Autowired
 	private ItemMasterDaoImpl itemMasterRepo;
+	
+	@Autowired
+	private VendorDaoImpl vendorDaoRepo;
 
 	public String savePurchaseOrder(PurchaseOrderVO order) {
 
@@ -32,6 +37,16 @@ public class MaterialManagementServiceImpl implements MaterialManagementService 
 		ItemMaster item = itemMasterRepo.save(itemMaster);
 
 		if(null != item) {
+			return "success";
+		}
+		return null;
+	}
+	
+	public String saveVendorDetails(BusinessContact businessContact) {
+		
+		BusinessContact vendorDetails = vendorDaoRepo.save(businessContact);
+		
+		if(null != vendorDetails) {
 			return "success";
 		}
 		return null;

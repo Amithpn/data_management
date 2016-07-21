@@ -1,25 +1,48 @@
 package com.dman.materialmgmt.domain;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @author amithpan
  *
  */
-public class Address {
+@Entity
+@Table(name = "address")
+public class Address implements Serializable {
 	
+	@JsonIgnore
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int addressId;
 	
+	@Column(name = "address1")
 	private String address1;
 	
+	@Column(name = "address2")
 	private String address2;
 	
+	@Column(name = "address3")
 	private String address3;
 	
+	@Column(name = "city")
 	private String city;
 	
+	@Column(name = "state")
 	private String state;
 	
+	@Column(name = "country")
 	private String country;
 	
+	@Column(name = "pincode")
 	private String pincode;
 
 	/**
@@ -134,9 +157,6 @@ public class Address {
 		this.pincode = pincode;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		return "Address [addressId=" + addressId + ", address1=" + address1
