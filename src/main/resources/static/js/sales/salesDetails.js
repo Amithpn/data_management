@@ -313,24 +313,30 @@ salesApp.controller(
 					}
 					
 					$scope.addNewVendorDetails = function() {
+						var address = {
+								address1 : $scope.newVendorDetails.addressLine1,
+								address2 : $scope.newVendorDetails.addressLine2,
+								address3 : $scope.newVendorDetails.addressLine3,
+								city : $scope.newVendorDetails.city,
+								state : $scope.newVendorDetails.state,
+								country : $scope.newVendorDetails.country,
+								pincode : $scope.newVendorDetails.pincode
+						}
+						var contact = {
+								personName : $scope.newVendorDetails.personName,
+								mobileNum : $scope.newVendorDetails.mobileNum,
+								workNum : $scope.newVendorDetails.workNum,
+								homeNum : $scope.newVendorDetails.homeNum
+						}
 						var newVendorObj = {
 							businessId : $scope.newVendorDetails.businessId,
 							name : $scope.newVendorDetails.name,
-							tinNo : $scope.newVendorDetails.tinNo,
-							statNo : $scope.newVendorDetails.statNo,
-							cstNo : $scope.newVendorDetails.cstNo,
-							panNo : $scope.newVendorDetails.panNo,
-							personName : $scope.newVendorDetails.personName,
-							mobileNo : $scope.newVendorDetails.mobileNo,
-							workNo : $scope.newVendorDetails.workNo,
-							homeNo : $scope.newVendorDetails.homeNo,
-							addressLine1 : $scope.newVendorDetails.addressLine1,
-							addressLine2 : $scope.newVendorDetails.addressLine2,
-							addressLine3 : $scope.newVendorDetails.addressLine3,
-							city : $scope.newVendorDetails.city,
-							state : $scope.newVendorDetails.state,
-							country : $scope.newVendorDetails.country,
-							pincode : $scope.newVendorDetails.pincode
+							tinNum : $scope.newVendorDetails.tinNum,
+							stastNum : $scope.newVendorDetails.stastNum,
+							cstNum : $scope.newVendorDetails.cstNum,
+							panNum : $scope.newVendorDetails.panNum,
+							address : address,
+							contact : contact
 						}
 						var newVendorRes = $http.post('/vendor', newVendorObj);
 						newVendorRes
@@ -352,9 +358,23 @@ salesApp.controller(
 					
 					function setNewVendorObj(data) {
 						$scope.newVendorDetails = {};
-						$scope.newVendorDetails.vendorId = data.vendorId;
-						$scope.newVendorDetails.vendorName = data.vendorName;
-						$scope.newVendorDetails.vendorAddress = data.vendorAddress;
+						$scope.newVendorDetails.addressLine1 = data.address.address1;
+						$scope.newVendorDetails.addressLine2 = data.address.address2;
+						$scope.newVendorDetails.addressLine3 = data.address.address3;
+						$scope.newVendorDetails.city = data.address.city;
+						$scope.newVendorDetails.state = data.address.state;
+						$scope.newVendorDetails.country = data.address.country;
+						$scope.newVendorDetails.pincode = data.address.pincode;
+						$scope.newVendorDetails.personName = data.contact.personName;
+						$scope.newVendorDetails.mobileNum = data.contact.mobileNum;
+						$scope.newVendorDetails.workNum = data.contact.workNum;
+						$scope.newVendorDetails.homeNum = data.contact.homeNum;
+						$scope.newVendorDetails.businessId = data.businessId;
+						$scope.newVendorDetails.name = data.name;
+						$scope.newVendorDetails.tinNum = data.tinNum;
+						$scope.newVendorDetails.stastNum = data.stastNum;
+						$scope.newVendorDetails.cstNum = data.cstNum;
+						$scope.newVendorDetails.panNum = data.panNum;
 					}
 					
 					$scope.addNewItemMaster = function () {
@@ -365,7 +385,7 @@ salesApp.controller(
 								itemSpecification : $scope.newItemMasterDetails.specification,
 								itemUom : $scope.newItemMasterDetails.uom
 							}
-							var newItemMasRes = $http.post('/itemmaster', newItemMasObj);
+							var newItemMasRes = $http.post('/dman/mm/items', newItemMasObj);
 						newItemMasRes
 									.success(function(data, status, headers, config) {
 										//$scope.message = "Authentication Saved Successfully";
