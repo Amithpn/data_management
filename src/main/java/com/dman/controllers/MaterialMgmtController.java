@@ -13,6 +13,7 @@ import com.dman.materialmgmt.domain.BusinessContact;
 import com.dman.materialmgmt.domain.ItemMaster;
 import com.dman.materialmgmt.domain.PurchaseOrderRequest;
 import com.dman.materialmgmt.domain.PurchaseOrderVO;
+import com.dman.materialmgmt.domain.Quotation;
 import com.dman.materialmgmt.service.MaterialManagementService;
 
 @RestController
@@ -24,7 +25,7 @@ public class MaterialMgmtController {
 	@Autowired
 	MaterialManagementService poService;
 	
-	@RequestMapping(value = "/mm", method = RequestMethod.POST, headers = "Accept=application/json")
+	/*@RequestMapping(value = "/mm", method = RequestMethod.POST, headers = "Accept=application/json")
     public String createSubscription(@RequestBody PurchaseOrderRequest poRequest) {
 		
 		PurchaseOrderVO order = new PurchaseOrderVO();
@@ -40,7 +41,7 @@ public class MaterialMgmtController {
 		logger.debug(">>savePurchaseOrder PurchaseOrderRequest:"+ poRequest);
 		
 		return msg;
-	}
+	}*/
 	
 	@RequestMapping(value = "/mm/items", method = RequestMethod.POST, headers = "Accept=application/json")
     public String saveItemMasterDetails(@RequestBody ItemMaster itemMaster) {
@@ -58,6 +59,16 @@ public class MaterialMgmtController {
 		String msg = poService.saveVendorDetails(businessContact);
 		
 		logger.debug(">>saveVendorDeatils :"+ businessContact);
+		
+		return msg;
+	}
+	
+	@RequestMapping(value = "/mm/quotation", method = RequestMethod.POST, headers = "Accept=application/json")
+    public String saveQuotation(@RequestBody Quotation quotation) {
+		
+		String msg = poService.saveQuotation(quotation);
+		
+		logger.debug(">>saveVendorDeatils :"+ quotation);
 		
 		return msg;
 	}
